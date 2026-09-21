@@ -4,187 +4,384 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css/style.css">
+    <meta name="description"
+        content="Haidar Ali — Software Developer and Network & Telecom student. Explore my skills, projects and get in touch.">
+    <meta name="theme-color" content="#05070d">
+    <meta name="author" content="Haidar Ali">
+
+    <meta property="og:title" content="Haidar Ali | Software Developer">
+    <meta property="og:description"
+        content="Software Developer and Network & Telecom student building modern, responsive web applications.">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/png" href="Assets/favicon-32x32.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="script.js"></script>
-    <title>My Portfolio</title>
+
+    <link rel="stylesheet" href="style.css/style.css">
+    <title>Haidar Ali | Software Developer</title>
 </head>
 
 <body>
+    <a class="skip-link" href="#home">Skip to content</a>
+
+    <div class="scroll-progress" aria-hidden="true"><span id="scrollBar"></span></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <div class="bg-orbs" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+    </div>
+
+    <header class="site-header" id="siteHeader">
+        <nav class="nav container" aria-label="Primary">
+            <a href="#home" class="logo">
+                <span class="logo-mark">H</span>
+                <span class="logo-text">Haidar<span class="dot">.</span></span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false"
+                aria-controls="navMenu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
-        <header>
-            <nav>
-                <ul class="main‑nav">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+        <!-- HERO -->
+        <section class="hero section" id="home">
+            <div class="container hero-grid">
+                <div class="hero-text reveal">
+                    <p class="eyebrow"><span class="pulse-dot"></span> Available for opportunities</p>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="gradient-text">Haidar Ali</span>
+                    </h1>
+                    <h2 class="hero-role">
+                        I build <span class="typed" id="typed"></span><span class="caret" aria-hidden="true"></span>
+                    </h2>
+                    <p class="hero-desc">
+                        Software Developer and Network &amp; Telecom student who turns ideas into clean,
+                        responsive and user-focused digital experiences.
+                    </p>
 
-        <section class="top-section" id="home">
-            <div class="home">
-                <div class="text-div">
-                    <h1>Hello, I am <br><span>Haidar</span></h1>
-                    <p>Ready to Innovate</p>
-                    <h1>Software Developer</h1>
-                    <p>Network & Telecom Student</p>
-                    <p>You are welcome to my portfolio,where you have an insight of my skills,career path, and my
-                        projects.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#projects">
+                            <i class="fa-solid fa-diagram-project"></i> View My Work
+                        </a>
+                        <a class="btn btn-ghost" href="Assets/Haidar-Ali-CV.pdf" download>
+                            <i class="fa-solid fa-download"></i> Download CV
+                        </a>
+                    </div>
 
-                    <div class="secondary-btn"><button>Download CV</button></div>
+                    <ul class="hero-socials" aria-label="Social links">
+                        <li><a href="https://github.com/HaidarAli97" target="_blank" rel="noopener"
+                                aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
+                        <li><a href="https://twitter.com/haidar_cyberX" target="_blank" rel="noopener"
+                                aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                    </ul>
 
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-num" data-count="15" data-suffix="+">0</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num" data-count="3" data-suffix="+">0</span>
+                            <span class="stat-label">Years Coding</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num" data-count="100" data-suffix="%">0</span>
+                            <span class="stat-label">Dedication</span>
+                        </div>
+                    </div>
                 </div>
 
-
-
-                <div class="img-div">
-                    <img class="hero-circle" src="/Assets/hero_circle.png" alt="">
+                <div class="hero-visual reveal" data-delay="150">
+                    <div class="portrait-ring"></div>
+                    <div class="portrait">
+                        <img src="Assets/my image.jpg" alt="Portrait of Haidar Ali">
+                    </div>
+                    <div class="float-chip chip-1"><i class="fa-brands fa-html5"></i> HTML</div>
+                    <div class="float-chip chip-2"><i class="fa-brands fa-css3-alt"></i> CSS</div>
+                    <div class="float-chip chip-3"><i class="fa-brands fa-js"></i> JavaScript</div>
+                    <div class="float-chip chip-4"><i class="fa-solid fa-network-wired"></i> Networking</div>
                 </div>
             </div>
+
+            <a class="scroll-cue" href="#about" aria-label="Scroll to about">
+                <span></span>
+            </a>
         </section>
 
-        <section class="about-section" id="about">
-            <h2>About Me</h2>
-            <div class="about-div">
-                <div class="about-img-div">
-                    <img src="/Assets/my image.jpg" alt="My Image">
+        <!-- ABOUT -->
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">Get to know me</p>
+                    <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
                 </div>
-                <div class="about-text-div">
-                    <p>I am a passionate and detail-oriented Software Developer with a strong interest in building
-                        modern, responsive,and user-focused web applications. I enjoy transforming ideas into functional
-                        digital solutions by writing
-                        clean,efficient,and maintainable code.With experience in HTML, CSS, and JavaScript, I specialize
-                        in developing
-                        visually appealing and performance-optimizedwebsites. I focus on creating intuitive user
-                        experiences while ensuring that applications remain scalable, accessible,and responsive across
-                        different devices</p>
-                    <div class="secondary-btn"> <a href="#readmore"></a><button>
-                            Read More
-                        </button></div>
-                </div>
-            </div>
 
-            <div class="more-img-div">
-                <img src="/Assets/html-img.png" alt="html">
-                <img src="/Assets/css-img.jpg" alt="css">
-                <img src="/Assets/javascript-img.png" alt="javascript">
-                <img src="/Assets/code-img.png" alt="">
-            </div>
-        </section>
-
-        <section class="portfolio-section" id="portfolio">
-            <div class="parent-con">
-                <div class="card-inner">
-                    <div class="img-con">
-                        <img src="/Assets/full-web-img.png" alt="">
+                <div class="about-grid">
+                    <div class="about-media reveal">
+                        <div class="about-frame">
+                            <img src="Assets/my image.jpg" alt="Haidar Ali" loading="lazy">
+                        </div>
+                        <div class="about-badge">
+                            <i class="fa-solid fa-code"></i>
+                            <span>Clean &amp; modern code</span>
+                        </div>
                     </div>
 
-                    <div class="glass-con">
-                        <h2>
-                            full web development
-                        </h2>
-                        <button class="btn">Read more</button>
-                    </div>
-                </div>
-                <div class="card-inner">
-                    <div class="img-con">
-                        <img src="/Assets/landing-page-img.png" alt="">
-                    </div>
+                    <div class="about-content reveal" data-delay="120">
+                        <h3>Turning ideas into functional digital solutions</h3>
+                        <p>
+                            I am a passionate and detail-oriented Software Developer with a strong interest in
+                            building modern, responsive and user-focused web applications. I enjoy transforming
+                            ideas into functional digital solutions by writing clean, efficient and maintainable
+                            code.
+                        </p>
+                        <p>
+                            With experience in HTML, CSS and JavaScript, I specialise in developing visually
+                            appealing, performance-optimised websites — always keeping accessibility, scalability
+                            and responsiveness in mind.
+                        </p>
 
-                    <div class="glass-con">
-                        <h2>
-                            Landing Page
-                        </h2>
-                        <button class="btn">Read more</button>
-                    </div>
-                </div>
-                <div class="card-inner">
-                    <div class="img-con">
-                        <img src="/Assets/set-up-img.jpg" alt="">
-                    </div>
+                        <div class="skill-list">
+                            <div class="skill">
+                                <div class="skill-top"><span>HTML5</span><span>95%</span></div>
+                                <div class="bar"><i data-width="95%"></i></div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-top"><span>CSS3</span><span>90%</span></div>
+                                <div class="bar"><i data-width="90%"></i></div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-top"><span>JavaScript</span><span>85%</span></div>
+                                <div class="bar"><i data-width="85%"></i></div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-top"><span>Networking</span><span>80%</span></div>
+                                <div class="bar"><i data-width="80%"></i></div>
+                            </div>
+                        </div>
 
-                    <div class="glass-con">
-                        <h2>
-                            A set up environment
-                        </h2>
-                        <button class="btn">Read more</button>
-                    </div>
-                </div>
-                <div class="card-inner">
-                    <div class="img-con">
-                        <img src="/Assets/mobile-app-img.png" alt="">
-                    </div>
-
-                    <div class="glass-con">
-                        <h2>
-                            Mobile App Development
-                        </h2>
-                        <button class="btn">Read more</button>
-                    </div>
-                </div>
-                <div class="card-inner">
-                    <div class="img-con">
-                        <img src="/Assets/contact-field.jpg" alt="">
-                    </div>
-
-                    <div class="glass-con">
-                        <h2>
-                            Networking Service
-                        </h2>
-                        <button class="btn">Read more</button>
-                    </div>
-                </div>
-                <div class="card-inner">
-                    <div class="img-con">
-                        <img src="/Assets/networking-img-2.jpg" alt="">
-                    </div>
-
-                    <div class="glass-con">
-                        <h2>
-                            Networking Service
-                        </h2>
-                        <button class="btn">Read more</button>
+                        <a class="btn btn-primary" href="#contact">Let's talk <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="contact-section" id="contact">
-            <h1>Contact Me</h1>
-            <div class="contact-div">
-                <div class="contact-input-con">
-
-                    <form action="">
-                        <input type="text" placeholder="Your Name">
-                        <input type="tel" placeholder="Your Phone Number">
-                        <input type="email" placeholder="Your Email">
-                        <textarea name="" id="msg" cols="30" rows="10" placeholder="Your Message"></textarea>
-                        <button class="btn">Send Message</button>
+        <!-- PROJECTS -->
+        <section class="projects section" id="projects">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">Real, live work</p>
+                    <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+                    <p class="section-sub">Click any card to visit the live, deployed application.</p>
                 </div>
 
-                <div class="contact-img-con">
-                    <img src="/Assets/contact-me-img.png" alt="">
+                <div class="project-grid">
+                    <article class="project-card reveal">
+                        <a class="project-thumb thumb-medilink" href="https://medilink-app-blue.vercel.app"
+                            target="_blank" rel="noopener" aria-label="Open MediLink live site">
+                            <img src="Assets/project-medilink.png" alt="MediLink clinic management app" loading="lazy">
+                            <span class="project-tag">Live</span>
+                        </a>
+                        <div class="project-body">
+                            <h3>MediLink — Clinic Management</h3>
+                            <p>A clinic management platform that streamlines patient records, appointments and
+                                day-to-day operations for healthcare teams.</p>
+                            <ul class="chips">
+                                <li>Healthcare</li>
+                                <li>Web App</li>
+                                <li>Dashboard</li>
+                            </ul>
+                            <div class="project-links">
+                                <a class="btn btn-primary btn-sm"
+                                    href="https://medilink-app-blue.vercel.app" target="_blank" rel="noopener">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                                <a class="btn btn-ghost btn-sm" href="https://github.com/HaidarAli97/medilink"
+                                    target="_blank" rel="noopener">
+                                    <i class="fa-brands fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-delay="120">
+                        <a class="project-thumb thumb-frost" href="https://frostbiosciences.vercel.app" target="_blank"
+                            rel="noopener" aria-label="Open Frost Biosciences live site">
+                            <img src="Assets/project-frost.png" alt="Frost Biosciences website" loading="lazy">
+                            <span class="project-tag">Live</span>
+                        </a>
+                        <div class="project-body">
+                            <h3>Frost Biosciences</h3>
+                            <p>A modern corporate website for a life-sciences company, focused on clear storytelling,
+                                product presentation and lead capture.</p>
+                            <ul class="chips">
+                                <li>Biotech</li>
+                                <li>Corporate Site</li>
+                                <li>Responsive</li>
+                            </ul>
+                            <div class="project-links">
+                                <a class="btn btn-primary btn-sm" href="https://frostbiosciences.vercel.app"
+                                    target="_blank" rel="noopener">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                                <a class="btn btn-ghost btn-sm" href="https://github.com/HaidarAli97/frostbiosciences"
+                                    target="_blank" rel="noopener">
+                                    <i class="fa-brands fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-delay="240">
+                        <a class="project-thumb thumb-grade" href="https://grade-calculator-mu-rust.vercel.app"
+                            target="_blank" rel="noopener" aria-label="Open Grade Calculator live site">
+                            <img src="Assets/project-grade.png" alt="Grade Calculator app" loading="lazy">
+                            <span class="project-tag">Live</span>
+                        </a>
+                        <div class="project-body">
+                            <h3>Grade Calculator</h3>
+                            <p>A fast, intuitive grade calculator that helps students track scores and instantly see
+                                their GPA and final grades.</p>
+                            <ul class="chips">
+                                <li>Education</li>
+                                <li>Tool</li>
+                                <li>Responsive</li>
+                            </ul>
+                            <div class="project-links">
+                                <a class="btn btn-primary btn-sm" href="https://grade-calculator-mu-rust.vercel.app"
+                                    target="_blank" rel="noopener">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                                <a class="btn btn-ghost btn-sm" href="https://github.com/HaidarAli97/Grade-Calculator"
+                                    target="_blank" rel="noopener">
+                                    <i class="fa-brands fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <footer>
-            <div class="footer-div">
-                <p>Copyright &copy; 2026 All rights reserved | This template is made by <bold>Haidar</bold>
-                </p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/haidar_cyberX"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <!-- CONTACT -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">Let's work together</p>
+                    <h2 class="section-title">Contact <span class="gradient-text">Me</span></h2>
+                    <p class="section-sub">Have a project in mind or just want to say hello? Drop a message.</p>
                 </div>
-        </footer>
+
+                <div class="contact-grid">
+                    <div class="contact-info reveal">
+                        <ul class="info-list">
+                            <li>
+                                <span class="info-icon"><i class="fa-solid fa-envelope"></i></span>
+                                <div>
+                                    <span class="info-label">Email</span>
+                                    <a href="mailto:haidarali@example.com">haidarali@example.com</a>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="info-icon"><i class="fa-solid fa-location-dot"></i></span>
+                                <div>
+                                    <span class="info-label">Location</span>
+                                    <span>Nigeria</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="info-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                                <div>
+                                    <span class="info-label">Focus</span>
+                                    <span>Software Development &amp; Networking</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="contact-visual">
+                            <img src="Assets/contact-me-img.png" alt="" loading="lazy">
+                        </div>
+                    </div>
+
+                    <form class="contact-form reveal" id="contactForm" data-delay="120" novalidate>
+                        <div class="field">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="field">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="field">
+                            <input type="text" id="subject" name="subject" placeholder="Subject">
+                        </div>
+                        <div class="field">
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message"
+                                required></textarea>
+                        </div>
+                        <button class="btn btn-primary btn-block" type="submit">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <a href="#home" class="logo">
+                <span class="logo-mark">H</span>
+                <span class="logo-text">Haidar<span class="dot">.</span></span>
+            </a>
+
+            <ul class="footer-nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <ul class="hero-socials footer-socials" aria-label="Social links">
+                <li><a href="https://github.com/HaidarAli97" target="_blank" rel="noopener" aria-label="GitHub"><i
+                            class="fa-brands fa-github"></i></a></li>
+                <li><a href="https://twitter.com/haidar_cyberX" target="_blank" rel="noopener"
+                        aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+            </ul>
+        </div>
+        <p class="copyright">© <span id="year"></span> Haidar Ali. All rights reserved.</p>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js" defer></script>
 </body>
 
 </html>
