@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const menu = document.getElementById('navMenu');
 
   const closeMenu = () => {
+    if (!header || !toggle) return;
     header.classList.remove('nav-open');
     toggle.setAttribute('aria-expanded', 'false');
   };
@@ -51,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (scrollBar) scrollBar.style.width = pct + '%';
 
     const scrolled = doc.scrollTop > 30;
-    header.classList.toggle('scrolled', scrolled);
+    if (header) header.classList.toggle('scrolled', scrolled);
     if (backToTop) backToTop.classList.toggle('show', doc.scrollTop > 600);
   };
 
@@ -112,11 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    if (prefersReduced) {
-      typedEl.textContent = roles[0];
-    } else {
-      setTimeout(type, 600);
-    }
+    setTimeout(type, 600);
   }
 
   /* ------------------------------------------------------- scroll reveal */
