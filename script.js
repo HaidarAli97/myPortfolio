@@ -4,7 +4,7 @@
    Haidar Ali — Portfolio interactions
    Replace CONTACT_EMAIL with your real address for the contact form to work.
    ========================================================================== */
-const CONTACT_EMAIL = 'haidarali@example.com';
+const CONTACT_EMAIL = 'alliyabdullahi@gmail.com';
 
 document.addEventListener('DOMContentLoaded', () => {
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -76,7 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
   /* -------------------------------------------------- typed role effect */
   const typedEl = document.getElementById('typed');
   if (typedEl) {
-    const roles = ['web experiences', 'responsive UIs', 'clean interfaces', 'networked systems'];
+    const roles = [
+      'modern web experiences',
+      'cross-platform mobile apps',
+      'responsive UIs',
+      'clean interfaces'
+    ];
     let roleIndex = 0;
     let charIndex = 0;
     let deleting = false;
@@ -84,6 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const type = () => {
       const current = roles[roleIndex];
       typedEl.textContent = current.slice(0, charIndex);
+
+      if (!deleting && charIndex === 0) {
+        typedEl.classList.remove('swap');
+        void typedEl.offsetWidth;
+        typedEl.classList.add('swap');
+      }
 
       if (!deleting && charIndex < current.length) {
         charIndex++;

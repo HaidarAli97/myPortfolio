@@ -511,7 +511,30 @@ main {
 }
 
 .typed {
-  color: var(--accent-color);
+  display: inline-block;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.typed.swap {
+  animation: swapIn 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes swapIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.96);
+    filter: blur(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
 }
 
 .caret {
@@ -1269,23 +1292,38 @@ main {
     height: calc(100vh - var(--header-h));
     flex-direction: column;
     align-items: stretch;
-    gap: 4px;
+    gap: 6px;
     padding: 24px;
-    background: rgba(6, 10, 20, 0.96);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border-left: 1px solid var(--border);
+    border-radius: 22px 0 0 22px;
+    background:
+      radial-gradient(circle at 100% 0%, rgba(15, 224, 243, 0.16), transparent 55%),
+      linear-gradient(160deg, rgba(18, 26, 46, 0.55), rgba(8, 12, 24, 0.42));
+    border-left: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: -24px 0 60px rgba(0, 0, 0, 0.45), inset 1px 0 0 rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(22px) saturate(180%);
+    -webkit-backdrop-filter: blur(22px) saturate(180%);
     transform: translateX(105%);
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    overflow-y: auto;
   }
   .site-header.nav-open .nav-menu {
     transform: translateX(0);
   }
   .nav-menu a {
-    padding: 14px 16px;
+    padding: 14px 18px;
     font-size: 1.05rem;
-    border-radius: 12px;
-    background: var(--surface);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  }
+  .nav-menu a:hover,
+  .nav-menu a.active {
+    background: rgba(15, 224, 243, 0.14);
+    border-color: rgba(15, 224, 243, 0.35);
+    transform: translateX(-4px);
   }
   .nav-menu a::after {
     display: none;
