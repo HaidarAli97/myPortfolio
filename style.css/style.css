@@ -661,6 +661,8 @@ main {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
 }
 
 @keyframes bob {
@@ -780,6 +782,8 @@ main {
   height: 440px;
   -o-object-fit: cover;
   object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
 }
 
 @keyframes morph {
