@@ -1093,6 +1093,15 @@ main {
   gap: 16px;
 }
 
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .field input,
 .field textarea {
   width: 100%;

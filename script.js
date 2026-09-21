@@ -2,8 +2,10 @@
 
 /* ==========================================================================
    Haidar Ali — Portfolio interactions
-   Replace CONTACT_EMAIL with your real address for the contact form to work.
+   The contact form uses Web3Forms. Get a free access key at https://web3forms.com
+   (enter your email, copy the key) and paste it below. It is safe to expose.
    ========================================================================== */
+const WEB3FORMS_ACCESS_KEY = '6d117bc6-e27c-4dac-ab4d-a7d65f6dbbe9';
 const CONTACT_EMAIL = 'alliyabdullahi@gmail.com';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -247,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const data = new FormData(form);
       const name = (data.get('name') || '').trim();
@@ -264,10 +266,48 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${encodeURIComponent(message)}`;
-      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${body}`;
-      showToast('Opening your email app — thanks, ' + name + '!', 'success');
-      form.reset();
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalHtml = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+      }
+
+      const openMailApp = () => {
+        const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${body}`;
+      };
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            access_key: WEB3FORMS_ACCESS_KEY,
+            name: name,
+            email: email,
+            subject: subject,
+            message: message,
+            from_name: 'Portfolio Website'
+          })
+        });
+        const result = await res.json();
+
+        if (result.success) {
+          showToast('Thanks ' + name + '! Your message has been sent.', 'success');
+          form.reset();
+        } else {
+          throw new Error(result.message || 'Submission failed');
+        }
+      } catch (err) {
+        openMailApp();
+        showToast('Could not send automatically — opening your email app instead.', 'error');
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalHtml;
+        }
+      }
     });
   }
 });
